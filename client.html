@@ -89,6 +89,9 @@
                 socket.on('getstock', function (msg) {
                     $('#text0').append(msg + '\n');
                 });
+                socket.on("ping", () => {
+                    socket.emit("ping", socket.id);
+                });
                 if ($('#wtokens').val()) {
                     socket.emit('stockload', { "wtokens": $('#wtokens').val() });
                 }
