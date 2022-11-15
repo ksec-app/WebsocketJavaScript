@@ -90,7 +90,7 @@
                     $('#text0').append(msg + '\n');
                 });
                 if ($('#wtokens').val()) {
-                    socket.emit('stockload', { "inputtoken": $('#wtokens').val() });
+                    socket.emit('stockload', { "wtokens": $('#wtokens').val() });
                 }
             } else {
                 $('#text0').append("Invalid access token" + '\n');
@@ -99,7 +99,7 @@
         $("#send-token").click(function () {
             if ($('#wtokens').val()) {
                 $('#text0').append('Sending...\n');
-                socket.emit('stockload', { "inputtoken": $('#wtokens').val() });
+                socket.emit('stockload', { "wtokens": $('#wtokens').val() });
                 $('#text0').append('Sent\n');
                 $('#text0').append('Is market open?\n');
             } else {
